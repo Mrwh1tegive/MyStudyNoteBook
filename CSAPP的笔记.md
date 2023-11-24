@@ -12,7 +12,7 @@
 
 符号扩展
 
-![image-20221014192359264](D:\cyy personal\开发学习笔记\fig\image-20221014192359264.png)
+![image-20221014192359264](.\fig\image-20221014192359264.png)
 
 Unsigned：0填充
 
@@ -26,7 +26,7 @@ Signed：符号扩展
 
 无符号数加法
 
-![image-20221015140237938](D:\cyy personal\开发学习笔记\fig\image-20221015140237938.png)
+![image-20221015140237938](.\fig\image-20221015140237938.png)
 
 溢出会直接取模
 
@@ -36,7 +36,7 @@ if sum >= 2^(w-1),变为负数
 
 if sum <- 2^(w-1),会变为正数
 
-![image-20221015200335212](D:\cyy personal\开发学习笔记\fig\image-20221015200335212.png)
+![image-20221015200335212](.\fig\image-20221015200335212.png)
 
 **乘法指令会比起移位指令会花更长的时间**——编译器在编译乘法时候有时候会解释为左移kbit
 
@@ -66,15 +66,15 @@ eg：64bit系统中，地址用64位表示，但是实际最大可用为47bit
 
 Byte 顺序：大多数都是小端序但是在因特网上是大端序列
 
-![image-20221018183310921](D:\cyy personal\开发学习笔记\fig\image-20221018183310921.png)
+![image-20221018183310921](.\fig\image-20221018183310921.png)
 
 ## Lectrue4、Floating Point
 
 ### IEEE802.3
 
-![image-20221022132548472](D:\cyy personal\开发学习笔记\fig\image-20221022132548472.png)
+![image-20221022132548472](.\fig\image-20221022132548472.png)
 
-![image-20221022133046400](D:\cyy personal\开发学习笔记\fig\image-20221022133046400.png)
+![image-20221022133046400](.\fig\image-20221022133046400.png)
 
 M一般介于1~2之间
 
@@ -90,17 +90,17 @@ exp全0(**min**,此时无隐含1，阶码是=1-bias，尾数数M = f)or全1(frac
 
 M = 1.xxxxx(2进制)
 
-![image-20221022145343322](D:\cyy personal\开发学习笔记\fig\image-20221022145343322.png)
+![image-20221022145343322](.\fig\image-20221022145343322.png)
 
 ### 对于浮点数数的操作（舍入）
 
-![image-20221022152054124](D:\cyy personal\开发学习笔记\fig\image-20221022152054124.png)
+![image-20221022152054124](.\fig\image-20221022152054124.png)
 
 向0舍入：字面意思
 
 向偶数舍入：<half向下舍入，>half向上舍入，==half向最近的偶数舍入
 
-二进制中：![image-20221022160829440](D:\cyy personal\开发学习笔记\fig\image-20221022160829440.png)
+二进制中：![image-20221022160829440](.\fig\image-20221022160829440.png)
 
 浮点数加法有一个特点就是：不满足结合律，可以交换
 
@@ -130,9 +130,9 @@ double的话会有舍入
 
 2、floating point data 4，8，10byte
 
-![image-20221105164121581](D:\cyy personal\开发学习笔记\fig\image-20221105164121581.png)
+![image-20221105164121581](.\fig\image-20221105164121581.png)
 
-![image-20221105164152575](D:\cyy personal\开发学习笔记\fig\image-20221105164152575.png)
+![image-20221105164152575](.\fig\image-20221105164152575.png)
 
 变量名称在汇编阶段和机器语言阶段会完全消失，会变成寄存器和内存中的某个位置
 
@@ -142,7 +142,7 @@ GDB
 
 寄存器的名称
 
-![image-20221105165616420](D:\cyy personal\开发学习笔记\fig\image-20221105165616420.png)
+![image-20221105165616420](.\fig\image-20221105165616420.png)
 
 使用%r名称时候，你会得到64bit
 
@@ -164,13 +164,13 @@ movq src, Dest:
 
 3、内存 （ %rax）
 
-![image-20221105173222621](D:\cyy personal\开发学习笔记\fig\image-20221105173222621.png)
+![image-20221105173222621](.\fig\image-20221105173222621.png)
 
 %rdi一直会是第一个参数寄存器
 
 %rsi将会是第二个参数寄存器
 
- ![image-20221106133534080](D:\cyy personal\开发学习笔记\fig\image-20221106133534080.png)
+ ![image-20221106133534080](.\fig\image-20221106133534080.png)
 
 用这些数字原因是索引放缩1~8倍
 
@@ -190,7 +190,7 @@ lea：load effective address
 
 src是地址mode 表达
 
-![image-20221106140816918](D:\cyy personal\开发学习笔记\fig\image-20221106140816918.png)
+![image-20221106140816918](.\fig\image-20221106140816918.png)
 
 ## Lecture6、Machine-Level Programming II:Control
 
@@ -215,7 +215,7 @@ testq b, a //a&b但是不设置dest
 
 jx 指令
 
-![image-20221106161128636](D:\cyy personal\开发学习笔记\fig\image-20221106161128636.png)
+![image-20221106161128636](.\fig\image-20221106161128636.png)
 
 为什么不能一直用条件move
 
@@ -243,7 +243,7 @@ goto以及jmp指令
 
 switch语句在编译中实际做的事情（并不是一堆ifelse）：
 
-![image-20221106172330179](D:\cyy personal\开发学习笔记\fig\image-20221106172330179.png)
+![image-20221106172330179](.\fig\image-20221106172330179.png)
 
 一步到位知道要执行的代码。而非遍历
 即下面的goto语句，直接获得索引表进入某些代码块
@@ -252,11 +252,11 @@ switch语句在编译中实际做的事情（并不是一堆ifelse）：
 
 表的详细信息由汇编程序填写
 
-![image-20221112133054335](D:\cyy personal\开发学习笔记\fig\image-20221112133054335.png)
+![image-20221112133054335](.\fig\image-20221112133054335.png)
 
 无论你给的值的范围有多少，编译器都会列出来然后直接作为索引访问该代码块
 
-![image-20221112134221684](D:\cyy personal\开发学习笔记\fig\image-20221112134221684.png)
+![image-20221112134221684](.\fig\image-20221112134221684.png)
 
 **Q1**：case的值为负时候，编译器会对值进行偏置（bias）避免出现负索引
 
@@ -282,7 +282,7 @@ switch语句在编译中实际做的事情（并不是一堆ifelse）：
 
 在栈中，程序传递潜在信息、控制信息和数据，并分配本地数据
 
-![image-20221112143902148](D:\cyy personal\开发学习笔记\fig\image-20221112143902148.png)
+![image-20221112143902148](.\fig\image-20221112143902148.png)
 
 栈的起始位置时内存高位，每次在栈上分配更多的空间时，都会通过递减该指针（sp：%rsp）来实现
 
@@ -328,9 +328,9 @@ jump to address
 
 ABI规则要求前6个参数通过特定的寄存器来传递
 
-![image-20221112154459256](D:\cyy personal\开发学习笔记\fig\image-20221112154459256.png)
+![image-20221112154459256](.\fig\image-20221112154459256.png)
 
-![image-20221112154506406](D:\cyy personal\开发学习笔记\fig\image-20221112154506406.png)
+![image-20221112154506406](.\fig\image-20221112154506406.png)
 
 **warning**：这里的参数都要求是整数类型or指针类型
 
@@ -346,17 +346,17 @@ reason：寄存器访问速度>内存访问速度
 
 Usually，一个栈帧由两个指针分隔
 
-![image-20221112161347878](D:\cyy personal\开发学习笔记\fig\image-20221112161347878.png)%rbp：基指针//然而基本上不怎么用
+![image-20221112161347878](.\fig\image-20221112161347878.png)%rbp：基指针//然而基本上不怎么用
 
 当传递超过6个参数以上时，调用这将使用自己的栈帧来存储这些参数
 
-![image-20221112162841012](D:\cyy personal\开发学习笔记\fig\image-20221112162841012.png)
+![image-20221112162841012](.\fig\image-20221112162841012.png)
 
 若我们正在使用基指针，必须有办法存储基指针的旧值
 
 还有一些局部状态例如要保存的寄存器，均会存储在栈帧内
 
-![image-20221112171541917](D:\cyy personal\开发学习笔记\fig\image-20221112171541917.png)
+![image-20221112171541917](.\fig\image-20221112171541917.png)
 
 所以要地址时，是存在栈内存上的
 
@@ -392,7 +392,7 @@ caller 不应该假设寄存器会一直不变
 
 %r10，%r11用于caller saved
 
-![image-20221113133857491](D:\cyy personal\开发学习笔记\fig\image-20221113133857491.png)
+![image-20221113133857491](.\fig\image-20221113133857491.png)
 
 ## Lecture8、Machine-Level Programming IV：Data
 
@@ -402,7 +402,7 @@ caller 不应该假设寄存器会一直不变
 
 #### 一维
 
-![image-20221113141506014](D:\cyy personal\开发学习笔记\fig\image-20221113141506014.png)
+![image-20221113141506014](.\fig\image-20221113141506014.png)
 
 #### 多维
 
@@ -414,7 +414,7 @@ caller 不应该假设寄存器会一直不变
 
 嵌套数组
 
-![image-20221113155005403](D:\cyy personal\开发学习笔记\fig\image-20221113155005403.png)
+![image-20221113155005403](.\fig\image-20221113155005403.png)
 
 看书
 
@@ -426,7 +426,7 @@ caller 不应该假设寄存器会一直不变
 
 下图非按比例
 
-![image-20221119141218068](D:\cyy personal\开发学习笔记\fig\image-20221119141218068.png)
+![image-20221119141218068](.\fig\image-20221119141218068.png)
 
 #### Stack
 
@@ -450,9 +450,9 @@ caller 不应该假设寄存器会一直不变
 
 read-only
 
-![image-20221119161956749](D:\cyy personal\开发学习笔记\fig\image-20221119161956749.png)
+![image-20221119161956749](.\fig\image-20221119161956749.png)
 
-![image-20221119162024042](D:\cyy personal\开发学习笔记\fig\image-20221119162024042.png)
+![image-20221119162024042](.\fig\image-20221119162024042.png)
 
 ### Buffer Overflow缓冲区溢出
 
@@ -462,13 +462,13 @@ eg：在存储一条来自于消息的字符串时候，将会出现很多缓冲
 
 eg
 
-![image-20221120140918200](D:\cyy personal\开发学习笔记\fig\image-20221120140918200.png)
+![image-20221120140918200](.\fig\image-20221120140918200.png)
 
 栈指针下移24B用于buffer
 
 gets函数调用了24B的缓冲区，即使最开始只是声明了4B
 
-![image-20221120142157062](D:\cyy personal\开发学习笔记\fig\image-20221120142157062.png)
+![image-20221120142157062](.\fig\image-20221120142157062.png)
 
 当输入超过23B的字符时+上00结尾（\n）就会破坏返回地址的字节表示
 
@@ -490,7 +490,7 @@ gets函数调用了24B的缓冲区，即使最开始只是声明了4B
 
 栈保护stack canaries
 
-![image-20221120153400453](D:\cyy personal\开发学习笔记\fig\image-20221120153400453.png)
+![image-20221120153400453](.\fig\image-20221120153400453.png)
 
 在栈中取出canary的值和特殊区域的进行比较，看是否被侵占
 
@@ -522,11 +522,11 @@ reduction in strength
 
 改为位移
 
-![image-20221126160736883](D:\cyy personal\开发学习笔记\fig\image-20221126160736883.png)
+![image-20221126160736883](.\fig\image-20221126160736883.png)
 
 分享共同子表示
 
-![image-20221126161603649](D:\cyy personal\开发学习笔记\fig\image-20221126161603649.png)
+![image-20221126161603649](.\fig\image-20221126161603649.png)
 
 #### 过程调用
 
@@ -565,15 +565,15 @@ Cycles per element
 
 每次循环处理数组的两个元素
 
-![image-20221127160540571](D:\cyy personal\开发学习笔记\fig\image-20221127160540571.png)
+![image-20221127160540571](.\fig\image-20221127160540571.png)
 
 由于还是顺序执行依赖的原因So并没有更大的改善
 
-![image-20221127160739543](D:\cyy personal\开发学习笔记\fig\image-20221127160739543.png)
+![image-20221127160739543](.\fig\image-20221127160739543.png)
 
-![image-20221127161016230](D:\cyy personal\开发学习笔记\fig\image-20221127161016230.png)
+![image-20221127161016230](.\fig\image-20221127161016230.png)
 
-![image-20221127161654287](D:\cyy personal\开发学习笔记\fig\image-20221127161654287.png)
+![image-20221127161654287](.\fig\image-20221127161654287.png)
 
 ### 用AVX2编程
 
@@ -583,7 +583,7 @@ Cycles per element
 
 矢量加法
 
-![image-20221203165138119](D:\cyy personal\开发学习笔记\fig\image-20221203165138119.png)
+![image-20221203165138119](.\fig\image-20221203165138119.png)
 
 ### 分支执行怎么办？（乱序执行）
 
@@ -605,7 +605,7 @@ SRAM：Cache
 
 DRAM：主存，frame buffers（帧缓存）
 
-![image-20221204152011085](D:\cyy personal\开发学习笔记\fig\image-20221204152011085.png)
+![image-20221204152011085](.\fig\image-20221204152011085.png)
 
 ### 2、访问局限性
 
@@ -615,19 +615,19 @@ DRAM：主存，frame buffers（帧缓存）
 
 程序倾向于使用其地址接近or等于最近使用过的数据和指令的那些数据和地址
 
-![image-20221204160955129](D:\cyy personal\开发学习笔记\fig\image-20221204160955129.png)
+![image-20221204160955129](.\fig\image-20221204160955129.png)
 
 ### 3、存储层次中的缓存
 
 由于局部性原理，程序倾向于访问存储在第k层的数据（作为第k+1层的cache）
 
-## ![image-20221204162748723](D:\cyy personal\开发学习笔记\fig\image-20221204162748723.png)
+## ![image-20221204162748723](.\fig\image-20221204162748723.png)
 
 ## Lectrue12、Cache Memories
 
 ### 组织方式
 
-![image-20230225144032516](D:\cyy personal\开发学习笔记\fig\image-20230225144032516.png)
+![image-20230225144032516](.\fig\image-20230225144032516.png)
 
 每一组（set）都包含E=2^e行（line）
 
@@ -635,7 +635,7 @@ DRAM：主存，frame buffers（帧缓存）
 
 Cashe Size = S * E * B
 
-![image-20230225144457284](D:\cyy personal\开发学习笔记\fig\image-20230225144457284.png)
+![image-20230225144457284](.\fig\image-20230225144457284.png)
 
 V:有效位
 
@@ -643,7 +643,7 @@ tag：标记位（帮助搜索块）
 
 Address of word
 
-![image-20230225150440546](D:\cyy personal\开发学习笔记\fig\image-20230225150440546.png)
+![image-20230225150440546](.\fig\image-20230225150440546.png)
 
 b：用于确认块中的偏移量
 
@@ -663,7 +663,7 @@ s：无符号整数，
 
 直接映射缓存
 
-![image-20230225152905821](D:\cyy personal\开发学习笔记\fig\image-20230225152905821.png)
+![image-20230225152905821](.\fig\image-20230225152905821.png)
 
 标记位+有效位匹配时，命中
 
@@ -673,7 +673,7 @@ s：无符号整数，
 
 ### E路相连高速缓存
 
-![image-20230225160613290](D:\cyy personal\开发学习笔记\fig\image-20230225160613290.png)
+![image-20230225160613290](.\fig\image-20230225160613290.png)
 
 会把两个tsg都和地址的tag比较
 
@@ -699,7 +699,7 @@ typical
 
 ### 实际系统中的Cache设计
 
-![image-20230225171539522](D:\cyy personal\开发学习笔记\fig\image-20230225171539522.png)
+![image-20230225171539522](.\fig\image-20230225171539522.png)
 
 data cache 、instruction cache
 
@@ -715,7 +715,7 @@ miss rate、hit time、miss penalty
 
 逐个元素访问数组是有利的（block1的存在）
 
-![image-20230304163016364](D:\cyy personal\开发学习笔记\fig\image-20230304163016364.png)
+![image-20230304163016364](.\fig\image-20230304163016364.png)
 
 内存山
 
@@ -723,9 +723,9 @@ miss rate、hit time、miss penalty
 
 - ijk
 
-  ![image-20230304164748846](D:\cyy personal\开发学习笔记\fig\image-20230304164748846.png)
+  ![image-20230304164748846](.\fig\image-20230304164748846.png)
 
-  ![image-20230305152747031](D:\cyy personal\开发学习笔记\fig\image-20230305152747031.png)
+  ![image-20230305152747031](.\fig\image-20230305152747031.png)
 
   misses per inner loop
 
@@ -733,29 +733,29 @@ miss rate、hit time、miss penalty
 
 - jki
 
-  ![image-20230305160324227](D:\cyy personal\开发学习笔记\fig\image-20230305160324227.png)
+  ![image-20230305160324227](.\fig\image-20230305160324227.png)
 
 - kij
 
-  ![image-20230305160458869](D:\cyy personal\开发学习笔记\fig\image-20230305160458869.png)
+  ![image-20230305160458869](.\fig\image-20230305160458869.png)
 
 写操作比读取操作更为灵活
 
 ### 用块来改善时间局部性
 
-![image-20230305161725525](D:\cyy personal\开发学习笔记\fig\image-20230305161725525.png)
+![image-20230305161725525](.\fig\image-20230305161725525.png)
 
 分块后代码
 
-![image-20230305162131941](D:\cyy personal\开发学习笔记\fig\image-20230305162131941.png)
+![image-20230305162131941](.\fig\image-20230305162131941.png)
 
-![image-20230305162225232](D:\cyy personal\开发学习笔记\fig\image-20230305162225232.png)
+![image-20230305162225232](.\fig\image-20230305162225232.png)
 
 ## Lecture13、Linking
 
 ### 静态链接
 
-![image-20230305163014815](D:\cyy personal\开发学习笔记\fig\image-20230305163014815.png)
+![image-20230305163014815](.\fig\image-20230305163014815.png)
 
 为什么链接
 
